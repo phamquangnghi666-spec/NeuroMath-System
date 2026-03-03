@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đề Thi Thử & Tài Liệu Ôn Toán</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =============================
+   ROOT COLOR SYSTEM
+============================= */
+:root{
+    --main-orange:#f97316;
+    --dark-orange:#ea580c;
+    --light-orange:#fb923c;
+    --soft-bg:#fff7ed;
+    --white:#ffffff;
+    --shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* =============================
+   GLOBAL STYLE
+============================= */
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#f97316,#fb923c);
+    color:#333;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+/* =============================
+   HEADER
+============================= */
+.header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.header h1{
+    color:white;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.header p{
+    color:#fff3e0;
+    font-size:18px;
+}
+
+/* =============================
+   SECTION TITLE
+============================= */
+.section-title{
+    text-align:center;
+    color:var(--dark-orange);
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+/* =============================
+   EXAM LIST GRID
+============================= */
+.exam-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-bottom:60px;
+}
+
+/* =============================
+   EXAM CARD
+============================= */
+.exam-card{
+    background:var(--white);
+    padding:25px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    transition:0.3s ease;
+    border-top:6px solid var(--main-orange);
+}
+
+.exam-card:hover{
+    transform:translateY(-5px);
+}
+
+.exam-card h3{
+    color:var(--dark-orange);
+    margin-bottom:15px;
+}
+
+.exam-card a{
+    display:block;
+    text-decoration:none;
+    color:var(--main-orange);
+    font-weight:600;
+    margin:8px 0;
+    transition:0.2s;
+}
+
+.exam-card a:hover{
+    color:var(--dark-orange);
+    padding-left:5px;
+}
+
+/* =============================
+   TIPS SECTION
+============================= */
+.tips-section{
+    background:var(--soft-bg);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.tips-section ul{
+    padding-left:20px;
+}
+
+.tips-section li{
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+/* =============================
+   BACK BUTTON
+============================= */
+.back-btn{
+    display:inline-block;
+    margin-top:40px;
+    background:var(--main-orange);
+    color:white;
+    padding:14px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:var(--dark-orange);
+}
+
+/* =============================
+   FOOTER
+============================= */
+.footer{
+    text-align:center;
+    margin-top:60px;
+    color:#fff3e0;
+    font-size:14px;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media(max-width:768px){
+    .header h1{
+        font-size:30px;
+    }
+    .section-title{
+        font-size:22px;
+    }
+}
+/* =============================
+   PAGE INTRO (GIỐNG TRANG KHÁC)
+============================= */
+.page-intro{
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 50px;
+    text-align: center;
+    border-left: 8px solid #f97316;
+}
+
+.page-intro h1{
+    color: #ea580c;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.page-intro p{
+    font-size: 17px;
+    color: #555;
+    max-width: 700px;
+    margin: auto;
+}
+</style>
+</head>
+<body>
+
+<<div class="container" id="exam-section">
+    <div class="header">
+        <h1>📚 Kho Đề Thi Toán 2018 – 2025</h1>
+        <p>Luyện đề từ cơ bản đến nâng cao – chuẩn bị cho kỳ thi tốt nghiệp THPT</p>
+    </div>
+
+    <h2 class="section-title">Danh Sách Đề Theo Mức Độ</h2>
+
+    <div class="exam-grid">
+
+        <!-- EASY -->
+        <div class="exam-card">
+            <h3>🟢 Mức Dễ</h3>
+            <a href="https://images.tuyensinh247.com/picture/2018/0628/de-chinhthuc-toan-k18-m114-pdf.pdf" target="_blank">Đề Thi 2018</a>
+            <a href="https://thi.tuyensinh247.com/de-thi-thu-thpt-qg-mon-toan-thpt-le-van-huu-nam-2019-c31a42998.html" target="_blank">Đề Thi 2019</a>
+        </div>
+
+        <!-- MEDIUM -->
+        <div class="exam-card">
+            <h3>🟡 Mức Trung Bình</h3>
+            <a href="https://thi.tuyensinh247.com/de-thi-thu-thptqg-mon-toan-2020-thpt-thach-thanh-2-lan-1-c31a48732.html" target="_blank">Đề Thi 2020</a>
+            <a href="https://toanmath.com/2021/07/de-thi-thu-tn-thpt-2021-mon-toan-kenh-truyen-hinh-giao-duc-quoc-gia-vtv7-de-3.html" target="_blank">Đề Thi 2021</a>
+        </div>
+
+        <!-- HARD -->
+        <div class="exam-card">
+            <h3>🔴 Mức Khó</h3>
+            <a href="https://toanmath.com/de-thi-thu-tot-nghiep-thpt-2022-mon-toan-co-loi-giai-chi-tiet" target="_blank">Đề Thi 2022</a>
+            <a href="https://toanmath.com/de-thi-thu-tot-nghiep-thpt-2023-mon-toan-co-loi-giai-chi-tiet" target="_blank">Đề Thi 2023</a>
+            <a href="https://toanmath.com/2025/05/de-thi-thu-tot-nghiep-thpt-nam-2025-mon-toan-so-gddt-can-tho.html" target="_blank">Đề Chính Thức 2025</a>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">📌 Mẹo Học Toán Hiệu Quả</h2>
+
+    <div class="tips-section">
+        <ul>
+            <li>✔ Làm đề theo thứ tự từ dễ đến khó để xây nền tảng vững chắc.</li>
+            <li>✔ Ghi lại toàn bộ câu sai vào một file riêng để ôn tập lại.</li>
+            <li>✔ Luyện làm đề trong 90 phút như thi thật.</li>
+            <li>✔ Ôn kỹ các chuyên đề: Hàm số, Tích phân, Logarit, Hình không gian.</li>
+            <li>✔ Sau mỗi đề, xem lời giải và làm lại câu sai.</li>
+            <li>✔ Ôn lại công thức mỗi tuần để không quên kiến thức.</li>
+            <li>✔ Chia nhỏ mục tiêu mỗi ngày thay vì học dồn sát kỳ thi.</li>
+            <li>✔ Giữ tâm lý ổn định, ngủ đủ giấc trước ngày thi.</li>
+        </ul>
+    </div>
+
+    <div style="text-align:center;">
+        <a href="index.html" class="back-btn">⬅ Quay về Trang Chính</a>
+    </div>
+
+    <div class="footer">
+        © 2026 Math Learning System | Cam – White Edition
+    </div>
+
+</div>
+
+</body>
+</html>

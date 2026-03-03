@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiến Thức Trọng Tâm</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff6ec, #ffe2cc);
+  padding:40px;
+}
+h1{
+  text-align:center;
+  color:#ff7a00;
+  margin-bottom:50px;
+  font-size:36px;
+  text-shadow: 0 4px 15px rgba(255,122,0,0.3);
+}
+h1{
+  text-align:center;
+  color:#ff7a00;
+  margin-bottom:50px;
+}
+
+.topic-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+}
+
+.topic{
+  background:white;
+  width:320px;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  cursor:pointer;
+  transition:0.4s;
+  position:relative;
+}
+
+.topic:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+  border:1px solid #ff7a00;
+}
+
+.topic h3{
+  color:#ff7a00;
+  margin-bottom:10px;
+}
+
+.content{
+  max-height:0;
+  overflow:hidden;
+  transition:0.4s ease;
+  opacity:0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.topic.active .content{
+  max-height:1000px;
+  opacity:1;
+  margin-top:10px;
+}
+
+.back-btn{
+  text-decoration:none;
+  background:#ff7a00;
+  color:white;
+  padding:10px 18px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background:#ff9a3c;
+}
+
+/* Nút ở góc dưới phải */
+.back-btn.bottom{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+}
+
+.back-btn:hover{
+  background:#ff9a3c;
+}
+.preview{
+  opacity:0;
+  font-size:14px;
+  margin-top:10px;
+  transition:0.3s;
+  color:#666;
+}
+
+.topic:hover .preview{
+  opacity:1;
+}
+.popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+}
+
+.popup.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.popup-content{
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  width:80%;
+  max-height:85%;
+  overflow:auto;
+  padding:40px;
+  border-radius:25px;
+  position:relative;
+  animation:zoomIn 0.3s ease;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+
+.close-btn{
+  position:absolute;
+  right:20px;
+  top:15px;
+  cursor:pointer;
+  font-size:18px;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+.popup-content h3{
+  margin-top:20px;
+  color:#ff7a00;
+}
+
+.popup-content{
+  line-height:1.7;
+}
+.popup-content h3{
+  margin-top:20px;
+  color:#ff7a00;
+}
+
+.popup-content{
+  line-height:1.7;
+}
+.popup-content h2{
+  border-bottom:3px solid #ff7a00;
+  padding-bottom:10px;
+}
+.tab-btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  background:#f0f0f0;
+  transition:0.3s;
+  font-weight:600;
+}
+
+.tab-btn.active{
+  background:linear-gradient(135deg,#ff7a00,#ff9a3c);
+  color:white;
+  box-shadow:0 5px 15px rgba(255,122,0,0.3);
+}
+/* ===== INTRO KIẾN THỨC ===== */
+#kt-intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutIntro 1s ease forwards;
+  animation-delay: 3s;
+}
+
+.kt-intro-content {
+  text-align: center;
+  color: white;
+  animation: scaleIn 1s ease;
+}
+
+.kt-intro-content h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.kt-loading-bar {
+  width: 300px;
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.kt-loading-progress {
+  height: 100%;
+  width: 0%;
+  background: #00f5ff;
+  animation: loading 3s linear forwards;
+}
+
+@keyframes loading {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOutIntro {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+</style>
+</head>
+
+<body>
+<!-- INTRO KIẾN THỨC -->
+<div id="kt-intro">
+  <div class="kt-intro-content">
+    <h1>📚 KIẾN THỨC TRỌNG TÂM</h1>
+    <div class="kt-loading-bar">
+      <div class="kt-loading-progress"></div>
+    </div>
+    <p>Đang tải hệ thống kiến thức...</p>
+  </div>
+</div>
+
+<h1>Kiến Thức Trọng Tâm Ôn Thi Tốt Nghiệp</h1>
+
+<div class="topic-container">
+
+<div class="topic" onclick="openPopup('daoHam')">
+  <h3>📌 Hàm Số & Đạo Hàm</h3>
+  <div class="preview">Ôn tập đạo hàm, cực trị, tiệm cận...</div>
+</div>
+
+<div class="topic" onclick="openPopup('tichPhan')">
+  <h3>📌 Nguyên Hàm - Tích Phân</h3>
+  <div class="preview">Nguyên hàm cơ bản, tính tích phân...</div>
+</div>
+
+<div class="topic" onclick="openPopup('soPhuc')">
+  <h3>📌 Số Phức</h3>
+  <div class="preview">Dạng đại số, modun, phương trình...</div>
+</div>
+
+<div class="topic" onclick="openPopup('hinhHoc')">
+  <h3>📌 Hình Học Không Gian</h3>
+  <div class="preview">Tọa độ Oxyz, mặt phẳng, khoảng cách...</div>
+</div>
+
+<div class="topic" onclick="openPopup('thucTe')">
+  <h3>📌 Toán Thực Tế</h3>
+  <div class="preview">Lãi suất, chuyển động, xác suất...</div>
+</div>
+
+</div>
+
+<a href="index.html" class="back-btn bottom">⬅ Quay lại</a>
+<script>
+
+const topicsData = {
+
+  daoHam: `
+    <h2>📌 HÀM SỐ & ĐẠO HÀM</h2>
+
+    <h3>I. Công thức cơ bản</h3>
+    (xⁿ)' = n·xⁿ⁻¹ <br>
+    (eˣ)' = eˣ <br>
+    (lnx)' = 1/x <br><br>
+
+    <h3>II. Cực trị</h3>
+    Điều kiện: y' = 0 <br>
+    Lập bảng biến thiên <br><br>
+
+    <h3>III. Tiệm cận</h3>
+    lim x→a f(x)=±∞ <br>
+    Tiệm cận đứng, ngang
+  `,
+
+  tichPhan: `
+    <h2>📌 NGUYÊN HÀM - TÍCH PHÂN</h2>
+
+    <h3>I. Nguyên hàm cơ bản</h3>
+    ∫xⁿ dx = xⁿ⁺¹/(n+1) + C <br>
+    ∫eˣ dx = eˣ + C <br><br>
+
+    <h3>II. Tích phân xác định</h3>
+    ∫ₐᵇ f(x)dx = F(b) - F(a) <br><br>
+
+    <h3>III. Ứng dụng</h3>
+    Tính diện tích hình phẳng
+  `,
+
+  soPhuc: `
+    <h2>📌 SỐ PHỨC</h2>
+
+    <h3>I. Dạng đại số</h3>
+    z = a + bi <br><br>
+
+    <h3>II. Modun</h3>
+    |z| = √(a² + b²) <br><br>
+
+    <h3>III. Phương trình</h3>
+    z² = -1 → z = ±i
+  `,
+
+  hinhHoc: `
+    <h2>📌 HÌNH HỌC KHÔNG GIAN</h2>
+
+    <h3>I. Mặt phẳng</h3>
+    Ax + By + Cz + D = 0 <br><br>
+
+    <h3>II. Khoảng cách</h3>
+    d = |Ax₀+By₀+Cz₀+D| / √(A²+B²+C²)
+  `,
+
+  thucTe: `
+    <h2>📌 TOÁN THỰC TẾ</h2>
+
+    <h3>I. Lãi suất</h3>
+    A = P(1+r)^n <br><br>
+
+    <h3>II. Chuyển động</h3>
+    S = vt <br><br>
+
+    <h3>III. Xác suất</h3>
+    P(A) = n(A)/n(Ω)
+  `
+};
+
+function openPopup(topic){
+  const popup = document.getElementById("popup");
+  const text = document.getElementById("popupText");
+
+  text.innerHTML = topicsData[topic];
+  popup.classList.add("active");
+}
+
+function closePopup(){
+  document.getElementById("popup").classList.remove("active");
+}
+
+</script>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">✖</span>
+    <div id="popupText"></div>
+  </div>
+</div>
+<script>
+  setTimeout(() => {
+    const intro = document.getElementById("kt-intro");
+    intro.remove();
+  }, 4000);
+</script>
+</body>
+</html>
